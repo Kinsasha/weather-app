@@ -5,6 +5,24 @@
     <title>Weather App</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <video class="backgroundVideo" autoplay muted loop playsinline>
+      <source src="../src/asset/rotating-earth.mp4" type="video/mp4" />
+    </video>
+    <div class="header">
+      <p class="headerText">weather app</p>
+    </div>
+    <div class="bodyContainer">
+      <div class="formGroup">
+        <label for="location">location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="e.g. Kinsasha"
+        />
+        <button type="submit" class="submitWeather">Submit</button>
+      </div>
+    </div>
+    <footer></footer>
   </body>
 </html>
