@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <video class="backgroundVideo" autoplay muted loop playsinline>
+      <source src="673915e84ad923a6f008.mp4" type="video/mp4" />
+    </video>
+    <div class="header">
+      <hi class="headerText">weather app</hi>
+    </div>
+    <div class="bodyContainer">
+      <div class="formGroup">
+        <label for="location" class="location">location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          class="locationInput"
+          placeholder="e.g. Kinsasha"
+        />
+        <button type="submit" class="submitBtn">Submit</button>
+        <div class="loader"></div>
+      </div>
+      <div class="weatherContainer" style="display: none"></div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
