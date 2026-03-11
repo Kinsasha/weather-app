@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @font-face {
   font-family: "grinched";
   src: url("./asset/Grinched\ 2.0\ DEMO.otf") format("opentype");
@@ -6,7 +9,7 @@
 }
 
 .header {
-  animation: cloudFloat 20s infinite linear;
+  animation: cloudFloat 10s infinite linear;
 }
 
 @keyframes cloudFloat {
@@ -14,10 +17,26 @@
     transform: translateX(0);
   }
   50% {
-    transform: translateX(20px);
+    transform: translateX(40px);
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -36,7 +55,6 @@ body {
   grid-template-rows: repeat(2, 1fr);
   font-size: clamp(0.5rem, 2vw + 2rem, 6rem);
   background-color: transparent;
-  border: 1px solid black;
   min-height: 100vh;
   width: 70vw;
   font-family: "grinched", system-ui, -apple-system, BlinkMacSystemFont,
@@ -66,29 +84,66 @@ body {
   width: 30vw;
   color: linear-gradient();
   background-image: linear-gradient(rgb(25, 0, 255), rgb(0, 0, 0, 0.2));
-  border: 0.3rem solid rgb(255, 255, 255);
+  border: 0.1rem solid rgb(255, 255, 255);
   border-radius: 50%;
-  /* clip-path: ellipse(50% 50% at 50% 50%); */
 }
 
 .headerText {
   font-size: 100px;
+  text-shadow: 4px 4px 4px #ffffff;
+}
+.location {
+  text-shadow: 4px 4px #ffffff;
+  letter-spacing: 0.3rem;
 }
 .bodyContainer {
   background-image: linear-gradient(rgb(0, 0, 0, 0.2), rgb(25, 0, 255));
-  height: clamp(30vh, 70vh, 100vh);
   min-width: 70vw;
   max-width: 90vw;
   border-radius: 2.5rem 2.5rem 0 0;
   display: flex;
-  justify-content: center;
-  border: 0.3rem solid rgb(255, 255, 255);
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  border: 0.1rem solid rgb(255, 255, 255);
+  min-height: 100vh;
+  position: relative;
 }
 .formGroup {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+}
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.1rem solid rgb(255, 255, 255, 0.2);
+  border-radius: 25px;
+  width: 40vw;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: clamp(0.5rem, 1vw + 1rem, 4rem);
+  font-family: "Dancing Script", Pacifico, Lobster, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0.8rem;
+  padding: 2rem;
+  border: 0.1rem solid rgb(255, 255, 255, 0.2);
+  border-radius: 13px;
+}
+.imgContainer {
+  border: 0.1rem solid rgb(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+}
+img {
+  width: 30rem;
+  height: 20rem;
 }
 input,
 button {
@@ -104,6 +159,25 @@ button {
 button {
   width: clamp(13rem, 5vw + 5rem, 25rem);
   padding: 2rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+button:hover {
+  animation: scaling 3s infinite;
+  border: 0.1rem solid rgba(255, 255, 255);
+}
+.loader {
+  width: 40px;
+  height: 40px;
+  /* background-color: ?; */
+  border: 0.8rem double yellow;
+  border-top: 0.8rem solid yellow;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  display: none;
 }
 footer {
   height: 5rem;

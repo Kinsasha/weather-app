@@ -9,19 +9,22 @@
       <source src="../src/asset/rotating-earth.mp4" type="video/mp4" />
     </video>
     <div class="header">
-      <p class="headerText">weather app</p>
+      <hi class="headerText">weather app</hi>
     </div>
     <div class="bodyContainer">
       <div class="formGroup">
-        <label for="location">location</label>
+        <label for="location" class="location">location</label>
         <input
           type="text"
           id="location"
           name="location"
+          class="locationInput"
           placeholder="e.g. Kinsasha"
         />
-        <button type="submit" class="submitWeather">Submit</button>
+        <button type="submit" class="submitBtn">Submit</button>
+        <div class="loader"></div>
       </div>
+      <div class="weatherContainer" style="display: none"></div>
     </div>
     <footer></footer>
   </body>
