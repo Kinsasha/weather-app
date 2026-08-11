@@ -2,14 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
   <body>
-    <video class="backgroundVideo" autoplay muted loop playsinline>
-      <source src="../src/asset/rotating-earth.mp4" type="video/mp4" />
-    </video>
     <div class="header">
-      <hi class="headerText">weather app</hi>
+      <div class="headerIconMain">
+        <div class="headIcon icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <title>white-balance-sunny</title>
+            <path
+              d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13"
+            />
+          </svg>
+        </div>
+        <hi class="headerText">weather checker</hi>
+      </div>
+      <div class="headerIcon icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 640"
+          fill="currentColor"
+        >
+          <path
+            d="M32 400C32 479.5 96.5 544 176 544L480 544C550.7 544 608 486.7 608 416C608 364.4 577.5 319.9 533.5 299.7C540.2 286.6 544 271.7 544 256C544 203 501 160 448 160C430.3 160 413.8 164.8 399.6 173.1C375.5 127.3 327.4 96 272 96C192.5 96 128 160.5 128 240C128 248 128.7 255.9 129.9 263.5C73 282.7 32 336.6 32 400z"
+          />
+        </svg>
+      </div>
     </div>
     <div class="bodyContainer">
       <div class="formGroup">
@@ -19,10 +42,12 @@
           id="location"
           name="location"
           class="locationInput"
-          placeholder="e.g. Kinsasha"
+          placeholder="e.g. Casablanca"
         />
         <button type="submit" class="submitBtn">Submit</button>
-        <div class="loader"></div>
+        <div class="loaderContainer">
+          <div class="loader"></div>
+        </div>
       </div>
       <div class="weatherContainer" style="display: none"></div>
     </div>

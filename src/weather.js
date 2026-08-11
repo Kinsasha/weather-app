@@ -2,7 +2,6 @@ import { renderData } from "./render";
 import { hideLoader, showLoader } from "./ui";
 
 const getWeather = async (data) => {
-  // console.log(data);
   showLoader();
   try {
     const response = await fetch(
@@ -10,11 +9,12 @@ const getWeather = async (data) => {
     );
 
     if (!response.ok) {
+      hideLoader();
       return alert(`Error: ${response.status}`);
     }
     const weatherData = await response.json();
 
-    renderData(weatherData);
+    return weatherData;
   } catch (error) {
     alert(error);
   } finally {

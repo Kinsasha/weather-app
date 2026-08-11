@@ -19,7 +19,9 @@ const images = {
 
 const renderData = (data) => {
   const body = document.querySelector(".bodyContainer");
+
   const imgContainer = document.createElement("div");
+  const weatherInfoContainer = document.createElement("div");
   const img = document.createElement("img");
   const name = document.createElement("p");
   const main = document.createElement("p");
@@ -46,16 +48,17 @@ const renderData = (data) => {
   img.classList.add("img");
   imgContainer.append(img);
 
+  weatherInfoContainer.classList.add(".weatherInfoContainer");
+
   name.textContent = `Location : ${data.name}`;
   main.textContent = data.weather[0].main;
   description.textContent = data.weather[0].description;
   temp.textContent = `Temperature : ${data.main.temp} C`;
-  tempMinMax.textContent = `Temperature Range : ${data.main.temp_min} C - ${data.main.temp_max} C`;
+  tempMinMax.textContent = `Temperature Range : ${data.main.temp_min} C to ${data.main.temp_max} C`;
   humidity.textContent = `Humidity : ${data.main.humidity}%`;
   feelsLike.textContent = `It feels like ${data.main.feels_like} C out there`;
 
-  weatherContainer.append(
-    imgContainer,
+  weatherInfoContainer.append(
     name,
     main,
     description,
@@ -64,6 +67,8 @@ const renderData = (data) => {
     humidity,
     feelsLike
   );
+
+  weatherContainer.append(imgContainer, weatherInfoContainer);
   body.append(weatherContainer);
 };
 
