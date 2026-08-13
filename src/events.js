@@ -44,7 +44,6 @@ const btnHandler = () => {
 
       renderData(weatherData);
       locationInput.value = "";
-      locationInput.focus();
     }
   });
 };
